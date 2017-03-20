@@ -9,6 +9,9 @@ var MongoClient = mongodb.MongoClient
 
 /* GET home page. */
 router.get('/new/:url(*)', function (req, res, next) {
+    
+    res.send(req.params.url);
+    
     MongoClient.connect(mLab, function (err, db) {
       if (err) {
         console.log("Unable to connect to server", err);
